@@ -1,0 +1,44 @@
+<!-- http://localhost/myphp/phptutorial/file-handling/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>📔 My Diary</h2>
+
+        <form action="process.php" method="post">
+            <label>Write your thoughts:</label><br>
+            <textarea name="entry" required placeholder="Write your diary entry here..." title="Diary Entry"></textarea><br><br>
+            <button type="submit">Save Entry</button>
+        </form>
+
+        <hr>
+
+        <h3>📚 All Entries</h3>
+        <iframe src="process.php" title="All Diary Entries"></iframe>
+    </div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const textarea = document.querySelector("textarea");
+        const form = document.querySelector("form");
+
+        textarea.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                form.submit();
+            }
+        });
+    });
+</script>
+
+</html>

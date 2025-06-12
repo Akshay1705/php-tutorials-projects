@@ -1,0 +1,32 @@
+<!-- http://localhost/myphp/phptutorial/travel-form/form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="formcss.css">
+</head>
+
+<body>
+    <h2>Travel Form</h2>
+    <form action="getprocess.php" method="get">
+        <label for="username">Full Name:</label><br>
+        <input type="text" id="username" name="name" required><br><br>
+    
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+    
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" name="destination" required><br><br>
+    
+        <label for="comments">Additional Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
