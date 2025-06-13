@@ -28,8 +28,11 @@ if (isset($_FILES["resume"])) {
         exit;
     }
 
-    // Move file to uploads folder
-    $uniqueName = time() . "_" . basename($fileName);
+    // automatically generate a unique name for the file
+    $timestamp = time();
+    $baseName = pathinfo($fileName, PATHINFO_FILENAME); // without extension
+    $cleanName = preg_replace("/[^a-zA-Z0-9_-]/", "_", $baseName); // sanitize
+    $uniqueName = $cleanName . "_" . $timestamp . "." . $fileExt;
     $targetPath = $uploadDir . $uniqueName;
 
     if (move_uploaded_file($tmpName, $targetPath)) {
