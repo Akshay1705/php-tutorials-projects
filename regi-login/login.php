@@ -28,6 +28,8 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
     // $result returns (no. of rows) matching the query
     if (mysqli_num_rows($result) === 1) {
+        //=== strict comparison ex: 5==='5' returns false (value + type)
+        //== loose comparison ex: 5=='5' returns true (value only)
         // If email exists, fetch user data
         // mysqli_fetch_assoc() returns an associative array of the result set
         $user = mysqli_fetch_assoc($result);
