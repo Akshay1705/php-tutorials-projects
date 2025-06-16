@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>📒 My Notes</h1>
-    <a href="add.php" class="add-btn">+ Add New Note</a>
+    <h1>📒 My Journal</h1>
+    <a href="add.php" class="add-btn">+ Add New Entry</a>
     <hr><br>
 
     <div class="container">
