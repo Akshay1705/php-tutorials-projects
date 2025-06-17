@@ -1,4 +1,7 @@
-<?php include 'db.php'; ?>
+<?php 
+include 'db.php'; 
+include 'session.php';
+?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {//post method come from down the form
     // Handle form submission
@@ -6,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {//post method come from down the form
     $content = mysqli_real_escape_string($conn, $_POST['content']);
     //INSERT INTO notes (title) VALUES ('Hello\'); =>text only (DROP TABLE notes; --');) 
     // Always use mysqli_real_escape_string to prevent SQL injection
-
-    $sql = "INSERT INTO notes (title, content) VALUES ('$title', '$content')";
+    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+    $sql = "INSERT INTO notes (title, content, user_id) VALUES ('$title', '$content', $user_id)";
     // Insert the new note into the database
     mysqli_query($conn, $sql);
     header("Location: index.php");

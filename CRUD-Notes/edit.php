@@ -1,4 +1,7 @@
-<?php include 'db.php'; ?>
+<?php 
+include 'db.php';
+include 'session.php'; 
+?>
 <?php
 $id = $_GET['id'];
 $sql = "SELECT * FROM notes WHERE id=$id";
