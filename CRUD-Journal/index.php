@@ -1,4 +1,4 @@
-<!-- http://localhost/myphp/phptutorial/CRUD-Notes/index.php -->
+<!-- http://localhost/myphp/phptutorial/CRUD-Journal/index.php -->
 <?php 
 include 'db.php';
 include 'session.php';//session is started in db.php and set in session.php
